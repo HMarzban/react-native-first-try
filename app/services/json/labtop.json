@@ -1,0 +1,47 @@
+{
+    "cat":"لب تاب و اولترابوک",
+    "products":[
+        [
+            {
+                "title":"لپ تاپ 15 اینچی ایسوس مدل - A540UP - A",
+                "img":"https://dkstatics-public.digikala.com/digikala-products/2015954.jpg?x-oss-process=image/resize,m_lfit,h_130,w_130/quality,q_60",
+                "price":"7,960,000",
+                "dkp":"276969"
+            },
+            {
+                "title":"لپ تاپ 15 اینچی ایسوس مدل FX503VD - A",
+                "img":"https://dkstatics-public.digikala.com/digikala-products/1305717.jpg?x-oss-process=image/resize,m_lfit,h_130,w_130/quality,q_60",
+                "price":"11,990,000",
+                "dkp":"506787"
+            }
+        ],
+        [
+            {
+                "title":"لپ تاپ 13 اینچی اپل مدل MacBook Air MQD32 2017",
+                "img":"https://dkstatics-public.digikala.com/digikala-products/203131.jpg?x-oss-process=image/resize,m_lfit,h_130,w_130/quality,q_60",
+                "price":"14,699,000",
+                "dkp":"282798"
+            },
+            {
+                "title":"لپ تاپ 15 اینچی لنوو مدل Ideapad 110 - K",
+                "img":"https://dkstatics-public.digikala.com/digikala-products/1549517.jpg?x-oss-process=image/resize,m_lfit,h_130,w_130/quality,q_60",
+                "price":"2,995,000",
+                "dkp":"191180"
+            }
+        ],
+        [
+            {
+                "title":"لپ تاپ 15.6 اینچی ایسوس مدل Strix ROG GL503VS - D",
+                "img":"https://dkstatics-public.digikala.com/digikala-products/912054.jpg?x-oss-process=image/resize,m_lfit,h_130,w_130/quality,q_60",
+                "price":"20,900,000",
+                "dkp":"523207"
+            },
+            {
+                "title":"لپ تاپ 15 اینچی مایکروسافت مدل Surface Book 2- B",
+                "img":"https://dkstatics-public.digikala.com/digikala-products/1297601.jpg?x-oss-process=image/resize,m_lfit,h_130,w_130/quality,q_60",
+                "price":"44,699,000",
+                "dkp":"383379"
+            }
+        ]
+    ]
+}

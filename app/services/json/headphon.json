@@ -1,0 +1,48 @@
+{
+    "cat":"هدفون، هدست، میکروفون",
+    "products":[
+        [
+            {
+                "title":"هندزفری بلوتوث مدل HBQ-I7",
+                "img":"https://dkstatics-public.digikala.com/digikala-products/2044141.jpg?image/resize,m_lfit,h_130,w_130/quality,q_60",
+                "price":"54,000",
+                "dkp":"420115"
+            },
+            {
+                "title":"هدست بلوتوث مدل Remax1",
+                "img":"https://dkstatics-public.digikala.com/digikala-products/2582764.jpg?image/resize,m_lfit,h_130,w_130/quality,q_60",
+                "price":"54,800",
+                "dkp":"610780"
+            }
+        ],
+        [
+            {
+                "title":"هدفون بی سیم مدل i7-Q1801",
+                "img":"https://dkstatics-public.digikala.com/digikala-products/3868630.jpg?image/resize,m_lfit,h_130,w_130/quality,q_60",
+                "price":"54,900",
+                "dkp":"840193"
+            },
+            {
+                "title":"هدست استریو بی سیم ال جی مدل Tone Ultra Premium HBS-810",
+                "img":"https://dkstatics-public.digikala.com/digikala-products/1129365.jpg?image/resize,m_lfit,h_130,w_130/quality,q_60",
+                "price":"647,000",
+                "dkp":"134500"
+            }
+        ],
+        [
+            {
+                "title":"هدفون بی سیم بیتس مدل Studio 3",
+                "img":"https://dkstatics-public.digikala.com/digikala-products/1979820.jpg?image/resize,m_lfit,h_130,w_130/quality,q_60",
+                "price":"3,310,000",
+                "dkp":"347594"
+            },
+            {
+                "title":"هدست کامپیوتر تسکو مدل TH 5124",
+                "img":"https://dkstatics-public.digikala.com/digikala-products/715648.jpg?image/resize,m_lfit,h_130,w_130/quality,q_60",
+                "price":"138,000",
+                "dkp":"98827"
+            }
+        ]
+    ]
+
+}

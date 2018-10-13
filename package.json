@@ -1,0 +1,34 @@
+{
+  "name": "shopcard",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start-react": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "start": "react-native start  --reset-cache",
+    "log": "react-native log-android ",
+    "dev": "react-devtools",
+    "android-windows": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res && react-native run-android"
+  },
+  "rnpm": {
+      "assets": [
+        "./app/assets/font/",
+        "./app/assets/img/"
+      ]
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.1.2",
+    "react": "16.5.0",
+    "react-native": "0.57.2",
+    "react-navigation": "^2.18.0"
+  },
+  "devDependencies": {
+    "babel-jest": "23.6.0",
+    "jest": "23.6.0",
+    "metro-react-native-babel-preset": "0.48.1",
+    "react-test-renderer": "16.5.0"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}

@@ -1,0 +1,48 @@
+{
+    "cat":"کنسول بازی",
+    "products":[
+        [
+            {
+                "title":"کنسول بازی سونی مدل Playstation 4 Pro مدل Limited Edition 500 Millions - ظرفیت 2 ترابایت",
+                "img":"https://dkstatics-public.digikala.com/digikala-products/3792172.jpg?x-oss-process=image/resize,m_lfit,h_130,w_130/quality,q_60",
+                "price":"18,999,000",
+                "dkp":"825863"
+            },
+            {
+                "title":"کنسول بازی سونی مدل Playstation 4 Slim کد CUH-2116B Region 2 - ظرفیت 1 ترابایت",
+                "img":"https://dkstatics-public.digikala.com/digikala-products/257887.jpg?x-oss-process=image/resize,m_lfit,h_130,w_130/quality,q_60",
+                "price":"4,300,000",
+                "dkp":"341816"
+            }
+        ],
+        [
+            {
+                "title":"کنسول بازی مایکروسافت مدل Xbox One S ظرفیت 1 ترابایت",
+                "img":"https://dkstatics-public.digikala.com/digikala-products/614418.jpg?x-oss-process=image/resize,m_lfit,h_130,w_130/quality,q_60",
+                "price":"3,3755,000",
+                "dkp":"175321"
+            },
+            {
+                "title":"کنسول بازی سونی مدل Playstation 4 Pro ریجن 2 کد CUH-7116B ظرفیت 1 ترابایت",
+                "img":"https://dkstatics-public.digikala.com/digikala-products/2208869.jpg?x-oss-process=image/resize,m_lfit,h_130,w_130/quality,q_60",
+                "price":"5,490,000",
+                "dkp":"437426"
+            }
+        ],
+        [
+            {
+                "title":"مجموعه کنسول بازی سونی مدل 2017 Playstation 4 Slim کد CUH-2116B Region 2 - ظرفیت 1 ترابایت",
+                "img":"https://dkstatics-public.digikala.com/digikala-products/1198766.jpg?x-oss-process=image/resize,m_lfit,h_130,w_130/quality,q_60",
+                "price":"4,849,000",
+                "dkp":"317267"
+            },
+            {
+                "title":"کنسول بازی مایکروسافت مدل Xbox One X ظرفیت 1 ترابایت",
+                "img":"https://dkstatics-public.digikala.com/digikala-products/266851.jpg?x-oss-process=image/resize,m_lfit,h_130,w_130/quality,q_60",
+                "price":"6,499,000",
+                "dkp":"342300"
+            }
+        ]
+    ]
+
+}

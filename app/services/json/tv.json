@@ -1,0 +1,48 @@
+{
+    "cat":"تلویزیون",
+    "products":[
+        [
+            {
+                "title":"تلویزیون ال ای دی هوشمند سامسونگ مدل 50MU7980 سایز 50 اینچ",
+                "img":"https://dkstatics-public.digikala.com/digikala-products/2816330.jpg?image/resize,m_lfit,h_130,w_130/quality,q_60",
+                "price":"6,785,000",
+                "dkp":"385188"
+            },
+            {
+                "title":"تلویزیون ال ای دی ال جی مدل 43LJ52100GI سایز 43 اینچ",
+                "img":"https://dkstatics-public.digikala.com/digikala-products/2815689.jpg?image/resize,m_lfit,h_130,w_130/quality,q_60",
+                "price":"3,900,000",
+                "dkp":"287696"
+            }
+        ],
+        [
+            {
+                "title":"تلویزیون ال ای دی هوشمند ال جی مدل 49LJ62000GI سایز 49 اینچ",
+                "img":"https://dkstatics-public.digikala.com/digikala-products/1625835.jpg?image/resize,m_lfit,h_130,w_130/quality,q_60",
+                "price":"5,343,000",
+                "dkp":"307260"
+            },
+            {
+                "title":"تلویزیون ال ای دی هوشمند سامسونگ مدل 55M6970 سایز 55 اینچ",
+                "img":"https://dkstatics-public.digikala.com/digikala-products/2819379.jpg?image/resize,m_lfit,h_130,w_130/quality,q_60",
+                "price":"7,800,000",
+                "dkp":"327857"
+            }
+        ],
+        [
+            {
+                "title":"تلویزیون ال ای دی ال جی مدل 49LJ52700GI سایز 49 اینچ",
+                "img":"https://dkstatics-public.digikala.com/digikala-products/2122807.jpg?image/resize,m_lfit,h_130,w_130/quality,q_60",
+                "price":"4,899,000",
+                "dkp":"292457"
+            },
+            {
+                "title":"تلویزیون ال ای دی هوشمند تی سی ال مدل 50P6US سایز 50 اینچ",
+                "img":"https://dkstatics-public.digikala.com/digikala-products/2615590.jpg?image/resize,m_lfit,h_130,w_130/quality,q_60",
+                "price":"4,980,000",
+                "dkp":"619136"
+            }
+        ]
+    ]
+
+}

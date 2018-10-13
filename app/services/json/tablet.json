@@ -1,0 +1,48 @@
+{
+    "cat":"تبلت",
+    "products":[
+        [
+            {
+                "title":"تبلت لنوو مدل TAB 2 A10-70L LTE ظرفیت 16 گیگابایت",
+                "img":"https://dkstatics-public.digikala.com/digikala-products/271005.jpg?image/resize,m_lfit,h_130,w_130/quality,q_60",
+                "price":"2,899,000",
+                "dkp":"68247"
+            },
+            {
+                "title":"تبلت لنوو مدل Tab 7 Essential TB-7304I ظرفیت 16 گیگابایت",
+                "img":"https://dkstatics-public.digikala.com/digikala-products/3407001.jpg?image/resize,m_lfit,h_130,w_130/quality,q_60",
+                "price":"1,039,000",
+                "dkp":"413815"
+            }
+        ],
+        [
+            {
+                "title":"تبلت لنوو مدل Yoga Tab 3 10 YT3-X50M - B ظرفیت 16 گیگابایت",
+                "img":"https://dkstatics-public.digikala.com/digikala-products/1543028.jpg?image/resize,m_lfit,h_130,w_130/quality,q_60",
+                "price":"2,699,000",
+                "dkp":"176412"
+            },
+            {
+                "title":"تبلت لنوو مدل Tab 3 7 3G ظرفیت 8 گیگابایت",
+                "img":"https://dkstatics-public.digikala.com/digikala-products/1206661.jpg?image/resize,m_lfit,h_130,w_130/quality,q_60",
+                "price":"910,000",
+                "dkp":"145269"
+            }
+        ],
+        [
+            {
+                "title":"تبلت لنوو مدل Tab 10 TB-X103F",
+                "img":"https://dkstatics-public.digikala.com/digikala-products/2032820.jpg?image/resize,m_lfit,h_130,w_130/quality,q_60",
+                "price":"2,239,000",
+                "dkp":"434817"
+            },
+            {
+                "title":"تبلت لنوو مدل IdeaPad Miix 310 ظرفیت 64 گیگابایت",
+                "img":"https://dkstatics-public.digikala.com/digikala-products/1273774.jpg?image/resize,m_lfit,h_130,w_130/quality,q_60",
+                "price":"3,899,000",
+                "dkp":"161327"
+            }
+        ]
+    ]
+
+}
