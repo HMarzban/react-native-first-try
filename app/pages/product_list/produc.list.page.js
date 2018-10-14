@@ -97,6 +97,7 @@ export default  Product_list;
 const styles = StyleSheet.create({
     productTitle:{
         padding:4,
+        fontSize:16,
         fontFamily: "IRANSansWeb",
     },
     productPrice:{
@@ -106,7 +107,7 @@ const styles = StyleSheet.create({
         fontFamily: "IRANSansWeb",
     },
     holder:{
-        height:140,
+        height:120,
         alignItems:"center",
         justifyContent: 'center',
     },
@@ -129,13 +130,14 @@ const styles = StyleSheet.create({
     },
     box: {
         flex: 1,
-        height: 280,
+        height: 340,
         margin:5,
         backgroundColor: '#fff',
         borderRadius: 4,
-        shadowColor:"#00000066",
-        shadowOffset:{width: 4,height:4},
-        shadowRadius:4,
-        shadowOpacity:1,
+        elevation:4,
+        shadowOffset: { width: 4, height: 4},
+        shadowColor: "grey",
+        shadowOpacity: 0.4,
+        shadowRadius: 10,
     }
 }); //@StyleSheet

@@ -1,6 +1,7 @@
 import React, {Component} from "react";
-import { View, Text, StyleSheet, ScrollView, Button, FlatList, Image, AsyncStorage} from "react-native";
-import {pubsub} from '../../services/pubsub';
+import { View, Text, StyleSheet, ScrollView, FlatList, Image, AsyncStorage} from "react-native";
+import {pubsub} from "../../services/pubsub";
+import {Buttonic} from "../../components/Buttonic";
 
 export class Basket_page extends Component{
     constructor(){
@@ -98,9 +99,12 @@ export class Basket_page extends Component{
                                             <Text  style={styles.productTitle}>{item.title}</Text>   
                                     </View>
                                     <Text style={styles.productPrice}>{item.price} تومان</Text>
-                                    <Button 
+                                    <Buttonic 
+                                        Title="حذف"
                                         onPress={this.btnRemoveProduct.bind(Object.assign({dkp:item.dkp, This:this,update:this.setState}))}
-                                        title="حذف"
+                                        style={styles.btnBuy}
+                                        btnStyle = {styles.btnBuy}
+                                        btnTitleStyle = {styles.btnText}
                                     />
                                 </View>
                             )} 
@@ -114,6 +118,24 @@ export class Basket_page extends Component{
 } //@Class:Basket_page()
 
 const styles = StyleSheet.create({
+    btnText:{
+        fontSize:16,
+        fontWeight:"bold",
+        color:"#ff4500",
+        fontFamily: "IRANSansWeb",
+    },
+    btnBuy:{
+        position:"absolute",
+        left:8,
+        bottom:2,
+        flex:1,
+        padding:6,
+        flexDirection: 'row',
+        justifyContent:"center",
+        alignItems:"center",
+        height:40,
+        
+    },
     Tprice:{
         fontFamily: "IRANSansWeb",
         color:"green"
@@ -133,15 +155,17 @@ const styles = StyleSheet.create({
         //flexWrap:"wrap"
     },
     productTitle:{
-        fontSize:18,
+        fontSize:16,
         width:220,
         marginTop:16,
         padding:6,
         fontFamily: "IRANSansWeb",
+
     },
     productPrice:{
-        fontSize:18,
+        fontSize:16,
         color:"#5f8336",
+        fontWeight:"bold",
         marginBottom:4,
         marginTop:10,
         paddingTop:6,
@@ -154,7 +178,11 @@ const styles = StyleSheet.create({
         backgroundColor:"#fff",
         borderRadius:3,
         margin:6,
-        overflow:"hidden"
+        elevation:4,
+        shadowOffset: { width: 4, height: 4},
+        shadowColor: "grey",
+        shadowOpacity: 0.4,
+        shadowRadius: 10,
     },
     footer:{
         backgroundColor:"#eee",

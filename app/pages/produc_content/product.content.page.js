@@ -4,6 +4,9 @@ import {View, Text, StyleSheet, Button,ScrollView, Image, AsyncStorage} from "re
 import {pubsub} from "../../services/pubsub";
 
 import {BasketButton} from "../../components/basket";
+import {Buttonic} from "../../components/Buttonic";
+
+
 export class Product_content extends Component{
 
     constructor(){
@@ -55,7 +58,7 @@ export class Product_content extends Component{
                 <ScrollView style={styles.body}>
                     <View style={[styles.section, styles.productCard]}>
                             <View style={styles.holder}>
-                                <Image  source={{uri: product.img}} style={{width: 140, height: 140}} /> 
+                                <Image  source={{uri: product.img}} style={{flex:0.42,width:"100%",height:"auto"}} /> 
                                 <Text   style={styles.productTitle}>{product.title}</Text>   
                             </View>
                         <Text style={styles.productPrice}>{product.price} تومان</Text>
@@ -67,9 +70,12 @@ export class Product_content extends Component{
                     </View>
                 </ScrollView>
                 <View style={styles.footer}>
-                    <Button
-                        title="خرید محصول"
+                    <Buttonic 
+                        Title="خرید محصول"
                         onPress={this.buyProduct.bind(this)}
+                        style={styles.btnBuy}
+                        btnStyle = {styles.btnBuy}
+                        btnTitleStyle = {styles.btnText}
                     />
                 </View>
             </View>
@@ -80,6 +86,20 @@ export class Product_content extends Component{
 export default  Product_content;
 
 const styles = StyleSheet.create({
+    btnText:{
+        fontSize:20,
+        color:"#fff",
+        fontFamily: "IRANSansWeb",
+    },
+    btnBuy:{
+        flex:1,
+        padding:6,
+        flexDirection: 'row',
+        justifyContent:"center",
+        alignItems:"center",
+        backgroundColor:"#75a43f",
+        height:50,
+    },
     productPrice:{
         fontSize:18,
         color:"#5f8336",
@@ -92,15 +112,16 @@ const styles = StyleSheet.create({
     },
     holder:{
         flexDirection: 'row',
-        justifyContent: 'space-between',
-        flexWrap:"wrap"
+        justifyContent: 'space-evenly',
+        minHeight:130
     },
     productTitle:{
-        fontSize:16,
-        width:220,
+        fontSize:14,
+        flex:0.6,
         marginTop:16,
-        right:20,
+        padding:10,
         fontFamily: "IRANSansWeb",
+        
     },
     productCard:{
         //flexDirection: 'row',
@@ -137,7 +158,12 @@ const styles = StyleSheet.create({
         backgroundColor:"#fff",
         padding:12,
         borderRadius:4,
-        marginBottom:10
+        marginBottom:10,
+        elevation:4,
+        shadowOffset: { width: 3, height: 3},
+        shadowColor: "grey",
+        shadowOpacity: 0.3,
+        shadowRadius: 10,
     },
     footer:{
       position: 'absolute', left: 0, right: 0, bottom: 0,
