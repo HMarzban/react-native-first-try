@@ -96,12 +96,14 @@ export default  Product_list;
 
 const styles = StyleSheet.create({
     productTitle:{
-        padding:4
+        padding:4,
+        fontFamily: "IRANSansWeb",
     },
     productPrice:{
         padding:6,
         borderTopColor: '#ddd',
         borderTopWidth: 1,
+        fontFamily: "IRANSansWeb",
     },
     holder:{
         height:140,
@@ -123,10 +125,11 @@ const styles = StyleSheet.create({
     text:{
         color:"#fff",
         fontSize: 24,
+        fontFamily: "IRANSansWeb",
     },
     box: {
         flex: 1,
-        height: 250,
+        height: 280,
         margin:5,
         backgroundColor: '#fff',
         borderRadius: 4,

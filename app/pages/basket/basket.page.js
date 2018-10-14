@@ -23,7 +23,7 @@ export class Basket_page extends Component{
     static navigationOptions = ({ navigation }) => {
         return {
           headerTitle: "خرید خود را نهای کنید",
-          headerRight: "",
+          headerRight: ""
         };
     } // @Static: navigationOptions
 
@@ -85,8 +85,8 @@ export class Basket_page extends Component{
             <View>
                 <ScrollView>
                     <View style={styles.PriceHolder}>
-                        <Text style={{color:"green"}}> {this.sepereteDigit(this.state.totalPrice)} تومان</Text>
-                        <Text style={{color:"green"}}> جمع کل خرید </Text>
+                        <Text style={styles.Tprice}> {this.sepereteDigit(this.state.totalPrice)} تومان</Text>
+                        <Text style={styles.Tprice}> جمع کل خرید </Text>
                     </View>
                     <View>
                         <FlatList
@@ -114,6 +114,10 @@ export class Basket_page extends Component{
 } //@Class:Basket_page()
 
 const styles = StyleSheet.create({
+    Tprice:{
+        fontFamily: "IRANSansWeb",
+        color:"green"
+    },
     PriceHolder:{
         padding:6,
         backgroundColor:"#fff",
@@ -132,7 +136,8 @@ const styles = StyleSheet.create({
         fontSize:18,
         width:220,
         marginTop:16,
-        padding:6
+        padding:6,
+        fontFamily: "IRANSansWeb",
     },
     productPrice:{
         fontSize:18,
@@ -141,7 +146,8 @@ const styles = StyleSheet.create({
         marginTop:10,
         paddingTop:6,
         borderColor:"#eee",
-        borderTopWidth:2
+        borderTopWidth:2,
+        fontFamily: "IRANSansWeb",
     },
     basketList:{
         padding:10,

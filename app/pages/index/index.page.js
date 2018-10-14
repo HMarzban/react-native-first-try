@@ -131,7 +131,7 @@ const styles = StyleSheet.create({
         paddingLeft:20,
         borderRadius:3,
         backgroundColor:"#00000066",
-        fontFamily: "IRANSansWeb(FaNum)",
+        fontFamily: "IRANSansWeb",
         //fontFamily: "Tahoma"
       },
       box: {

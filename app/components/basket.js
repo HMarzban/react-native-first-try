@@ -78,6 +78,7 @@ const styles = StyleSheet.create({
        backgroundColor:"#d40606",
        padding:6, 
        borderRadius:100,
+       fontFamily: "IRANSansWeb",
     }
 }); //@StyleSheet
 

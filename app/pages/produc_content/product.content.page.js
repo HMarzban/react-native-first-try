@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
         paddingTop:6,
         borderColor:"#eee",
         borderTopWidth:2,
-    
+        fontFamily: "IRANSansWeb",
     },
     holder:{
         flexDirection: 'row',
@@ -99,7 +99,8 @@ const styles = StyleSheet.create({
         fontSize:16,
         width:220,
         marginTop:16,
-        right:20
+        right:20,
+        fontFamily: "IRANSansWeb",
     },
     productCard:{
         //flexDirection: 'row',
@@ -119,12 +120,14 @@ const styles = StyleSheet.create({
         fontSize:16,
         padding:4,
         textAlign:"right",
-        direction:"rtl"
+        direction:"rtl",
+        fontFamily: "IRANSansWeb",
     },
     h2:{
         flex:1,
         fontSize:20,
-        fontWeight:"bold"
+        fontWeight:"bold",
+        fontFamily: "IRANSansWeb",
     },
     body:{
         padding:10,
