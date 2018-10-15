@@ -14,7 +14,7 @@ export class Buttonic extends Component {
 
         return(
             <TouchableOpacity style={this.props.btnStyle} onPress={this.props.onPress}>
-                <Text style={this.props.btnTitleStyle}>{this.props.Title}</Text>
+                <Text style={[this.props.btnTitleStyle]}>{this.props.Title}</Text>
             </TouchableOpacity>
         );
     }

@@ -26,15 +26,32 @@ export class Product_content extends Component{
     } //@Static: navigationOptions
     
    async buyProduct(){
+  
         try {
             let data = []
             let value = JSON.parse( await AsyncStorage.getItem('BasketHolder') );
            //console.log("localstorage",value);
-            if (value !== null) {
-                value.push(this.state.product)
+            if (value !== null ) {
+
+                let indexx = -1;
+                
+                value.forEach((product,index) => {
+                    if(product.dkp == this.state.product.dkp){
+                        indexx = index;
+                    }
+                });
+
+                if(indexx != -1){
+                    value[indexx]["amount"] = 1 + value[indexx]["amount"];
+                }else{
+                    this.state.product["amount"] = 1;
+                    value.push(this.state.product)
+                }
+                
                 await AsyncStorage.setItem('BasketHolder', JSON.stringify(value));
             }else{
-                data.push(this.state.product)
+                this.state.product["amount"] = 1;
+                data.push(this.state.product);
                 await AsyncStorage.setItem('BasketHolder', JSON.stringify(data));
             }
             pubsub.emit('basket',true);

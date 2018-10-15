@@ -3,6 +3,8 @@ import { View, Text, StyleSheet, ScrollView, FlatList, Image, AsyncStorage} from
 import {pubsub} from "../../services/pubsub";
 import {Buttonic} from "../../components/Buttonic";
 
+import {InputNumber} from "../../components/InputNumber";
+
 export class Basket_page extends Component{
     constructor(){
         super();
@@ -33,8 +35,10 @@ export class Basket_page extends Component{
             let data = JSON.parse(  await AsyncStorage.getItem('BasketHolder') );
             let price = 0;
             for(let product of data){
-                price = price + parseInt( product.price.replace(/[\D\s\._\-]+/g, "") )
-                console.log(price)
+                for(let i = 1 ; i <= product.amount ; i++ ){
+                    price = price + parseInt( product.price.replace(/[\D\s\._\-]+/g, "") )
+                }
+                
             }
             //console.log("data basket", data)
             this.setState({
@@ -52,27 +56,41 @@ export class Basket_page extends Component{
     } // @Function: componentDidMount()
 
   
-    removeProduct(_dkp){
+   async removeProduct(_dkp){
 
-      
-        let newBasket = this.state.basketList.filter(function( obj ) {
-                return obj.dkp !== _dkp;
-        });
-  
+        try {
+            
+            
+            let newBasket = this.state.basketList.filter(function( obj ) {
+                    return obj.dkp !== _dkp;
+            });
+    
 
-        let price = 0;
-        for(let product of newBasket){
-            price = price + parseInt( product.price.replace(/[\D\s\._\-]+/g, "") )
+            let price = 0;
+            for(let product of newBasket){
+
+                for(let i = 1 ; i <= product.amount ; i++ ){
+                    price = price + parseInt( product.price.replace(/[\D\s\._\-]+/g, "") )
+                }
+            }
+
+            this.setState({
+                basketList:newBasket,
+                totalPrice: price
+            });
+
+            if(newBasket.length !== 0 || newBasket !== null ){
+                await AsyncStorage.setItem('BasketHolder',JSON.stringify(newBasket));
+            }else{
+                await AsyncStorage.removeItem('BasketHolder');
+            }
+          
+            pubsub.emit("basket",{});
+
+        } catch (error) {
+              console.log("error", error)  
         }
-
-        this.setState({
-            basketList:newBasket,
-            totalPrice: price
-        });
-
-        AsyncStorage.setItem('BasketHolder',JSON.stringify(newBasket));
-        pubsub.emit("basket",{});
-       
+        
     } //@Function: fn_removeProduct()
 
 
@@ -80,6 +98,53 @@ export class Basket_page extends Component{
         //console.log('asd',this)
        this.This.removeProduct(this.dkp) 
     }// @Function: removeProduct()
+
+    changeOrderAmount(_el){
+        this.addProduct(_el.amount, _el.dkp)
+    }
+
+
+    async addProduct(_amount, _dkp){
+        try {
+           let products = JSON.parse( await AsyncStorage.getItem('BasketHolder') );
+
+           products.forEach((product,index) => {
+                if(product.dkp == _dkp){
+                    products[index]["amount"] = _amount
+                }
+           });
+
+           this.setState({
+                basketList:products
+            });
+
+           this.updateTotlaPrice();
+
+           await AsyncStorage.setItem('BasketHolder',JSON.stringify(products));
+
+    
+        } catch (error) {
+            console.log("error", error)  
+        }
+    }
+
+    
+    updateTotlaPrice(){
+
+        let price = 0;
+        for(let product of this.state.basketList){
+
+            for(let i = 1 ; i <= product.amount ; i++ ){
+                price = price + parseInt( product.price.replace(/[\D\s\._\-]+/g, "") )
+            }
+            
+        }
+
+        this.setState({
+            totalPrice: price
+        });
+
+    }
   
     render(){
         return(
@@ -98,14 +163,23 @@ export class Basket_page extends Component{
                                             <Image  source={{uri: item.img}} style={{width: 120, height: 120}} /> 
                                             <Text  style={styles.productTitle}>{item.title}</Text>   
                                     </View>
+            <View style={styles.footer}>
                                     <Text style={styles.productPrice}>{item.price} تومان</Text>
-                                    <Buttonic 
+                                    <InputNumber 
+                                        onChanged = {(text) => this.changeOrderAmount.bind(this)({amount: text, dkp: item.dkp}) }
+                                        style={styles.InputNumber}
+                                        value={item.amount || 1}
+                                    />
+                                     <Buttonic 
                                         Title="حذف"
                                         onPress={this.btnRemoveProduct.bind(Object.assign({dkp:item.dkp, This:this,update:this.setState}))}
                                         style={styles.btnBuy}
                                         btnStyle = {styles.btnBuy}
                                         btnTitleStyle = {styles.btnText}
                                     />
+                                   
+            </View>
+           
                                 </View>
                             )} 
                         />
@@ -118,22 +192,34 @@ export class Basket_page extends Component{
 } //@Class:Basket_page()
 
 const styles = StyleSheet.create({
+    InputNumber:{
+        marginTop:10
+    },
+    footer:{
+        flex:1,
+        flexDirection: 'row-reverse',
+        justifyContent: 'space-between',
+        borderColor:"#eee",
+        borderTopWidth:2,
+    },
     btnText:{
         fontSize:16,
-        fontWeight:"bold",
         color:"#ff4500",
         fontFamily: "IRANSansWeb",
     },
     btnBuy:{
-        position:"absolute",
-        left:8,
-        bottom:2,
-        flex:1,
+     
+        position:"relative",
+        top:12,
+        //left:8,
+        //bottom:2,
+       // flex:1,
         padding:6,
-        flexDirection: 'row',
-        justifyContent:"center",
-        alignItems:"center",
-        height:40,
+       // flexDirection: 'row',
+       // justifyContent:"center",
+       // alignItems:"center",
+        //height:40,
+
         
     },
     Tprice:{
@@ -169,8 +255,6 @@ const styles = StyleSheet.create({
         marginBottom:4,
         marginTop:10,
         paddingTop:6,
-        borderColor:"#eee",
-        borderTopWidth:2,
         fontFamily: "IRANSansWeb",
     },
     basketList:{
@@ -184,11 +268,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.4,
         shadowRadius: 10,
     },
-    footer:{
-        backgroundColor:"#eee",
-        padding: 30,
-        height:80,
-    }
+    
 }); //@StyleSheet
 
 
