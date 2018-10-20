@@ -20,7 +20,6 @@
     "@babel/runtime": "^7.1.2",
     "react": "16.5.0",
     "react-native": "0.57.2",
-    "react-native-snap-carousel": "^3.7.5",
     "react-navigation": "^2.18.0"
   },
   "devDependencies": {
