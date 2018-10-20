@@ -1,7 +1,14 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet, ScrollView, FlatList, TouchableOpacity, ImageBackground } from "react-native";
+import { View, Text, StyleSheet, ScrollView, FlatList,Image, TouchableOpacity, ImageBackground } from "react-native";
 import { pubsub } from "../../services/pubsub";
 import { BasketButton } from "../../components/basket";
+import {DGKLogo} from "../../components/DGKLogo";
+
+import { Catagory } from "../../components/catagory";
+import  * as Json_topSell from "../../services/json/topSell.json";
+import  * as Json_newProducts from "../../services/json/newProduct.json";
+
+
 
 
 export class Index_page extends Component{
@@ -19,12 +26,13 @@ export class Index_page extends Component{
                 likeBtn:this.state.likeBtn + _data.count 
             });
         });
+        
 
     } //@constructor()
 
     static navigationOptions = ({ navigation }) => {
         return {
-          headerTitle: "digikal",
+          headerTitle: ( <DGKLogo /> ),
           headerRight: (
             <BasketButton nav={navigation}/>
           ),
@@ -77,10 +85,27 @@ export class Index_page extends Component{
         });
     } //@Function: btn_navigate()
 
+   
     render(){
+       console.log("aljsdlkja",this)
+
         return(
-            <View style={{direction:"rtl"}}>
-                 <ScrollView>
+
+            <View style={{direction:"rtl",flex:1}}>
+
+                <ScrollView>
+
+                    <View style={{direction:"rtl", height:280,marginTop:18, }}>
+                            <Text style={{fontSize:22, padding:10, fontFamily: "IRANSansWeb", }}>محصولات پر فروش</Text>
+                            <Catagory
+                                data={Json_topSell.products.reverse()}
+                                navigation = {this.props.navigation}
+                            />
+                    </View>
+
+                  
+
+             
                     <FlatList
                         data={this.fetchData()}
                         renderItem={({item}) => ( 
@@ -97,6 +122,15 @@ export class Index_page extends Component{
                             </TouchableOpacity>  : <Text></Text> }
                         </View>)}
                     />
+
+                    <View style={{direction:"rtl", height:280,marginTop:18, }}>
+                            <Text style={{fontSize:22, padding:10, fontFamily: "IRANSansWeb", }}>محصولات پر فروش</Text>
+                            <Catagory
+                                data={Json_newProducts.products.reverse()}
+                                navigation = {this.props.navigation}
+                            />
+                    </View>
+
                     </ScrollView>
             </View>
         );
@@ -107,6 +141,13 @@ export class Index_page extends Component{
 export default  Index_page;
 
 const styles = StyleSheet.create({
+    RTLContainer: {
+        flexDirection: 'row-reverse'
+    },
+
+    LTRContainer: {
+        flexDirection: 'row'
+    },
     imgBack:{
         borderRadius:3,
        flex:1,

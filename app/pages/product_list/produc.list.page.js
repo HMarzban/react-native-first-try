@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity ,FlatList,ScrollView } from "react-native";
 import { BasketButton } from "../../components/basket";
+import {DGKLogo} from "../../components/DGKLogo";
 
 import * as Json_tv from "../../services/json/tv.json";
 import * as Json_labtop from "../../services/json/labtop.json";
@@ -21,10 +22,10 @@ export class Product_list extends Component{
 
     static navigationOptions = ({ navigation }) => {
         return {
-          headerTitle: "digikal",
-          headerRight: (
+            headerTitle: ( <DGKLogo /> ),
+            headerRight: (
             <BasketButton nav={navigation}/>
-          ),
+            ),
         };
     } //@Static: navigationOptions
     

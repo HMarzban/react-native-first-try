@@ -1,0 +1,66 @@
+{
+    "HeaderTitle":"منتخب جدیدترین کالاها",
+    "products":[
+            {
+                "title":"کاور آی فیس مدل S6 مناسب برای گوشی موبایل سامسونگ S6 EDGE",
+                "img":"https://dkstatics-public.digikala.com/digikala-products/3798318.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_80",
+                "price":"15,900",
+                "dkp":"826836"
+            },
+            {
+                "title":"یخچال و فریزر اسنوا مدل S4-0240",
+                "img":"https://dkstatics-public.digikala.com/digikala-products/3796616.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_80",
+                "price":"6,033,300",
+                "dkp":"826572"
+            },
+            {
+                "title":"کاور کی اچ مدل 7226 مناسب برای گوشی موبایل هوآوی P10 Plus",
+                "img":"https://dkstatics-public.digikala.com/digikala-products/3795358.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_80",
+                "price":"45,000",
+                "dkp":"826386"
+            },
+            {
+                "title":"تیشرت طرح خوشنویسی شعر کد ETL01",
+                "img":"https://dkstatics-public.digikala.com/digikala-products/3901790.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_80",
+                "price":"40,000",
+                "dkp":"826556"
+            },
+            {
+                "title":"استیکر لپ تاپ و تبلت طرح Always in Love کد BSB-00101",
+                "img":"https://dkstatics-public.digikala.com/digikala-products/3796790.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_80",
+                "price":"9,900",
+                "dkp":"826589"
+            },
+            {
+                "title":"یخچال و فریزر جنرال الکتریک مدل GRE15KICRLS",
+                "img":"https://dkstatics-public.digikala.com/digikala-products/3795923.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_80",
+                "price":"5,950,000",
+                "dkp":"826469"
+            },
+            {
+                "title":"مژه مصنوعی مکس فکتور مدل Medium Block",
+                "img":"https://dkstatics-public.digikala.com/digikala-products/3795965.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_80",
+                "price":"27,000",
+                "dkp":"826478"
+            },
+            {
+                "title":"کوله پشتی طرح چرم مدل K213-B به همراه جامدادی",
+                "img":"https://dkstatics-public.digikala.com/digikala-products/3830544.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_80",
+                "price":"125,000",
+                "dkp":"832783"
+            },
+            {
+                "title":"کفش ساحلی مردانه مدل هومن کد 2945",
+                "img":"https://dkstatics-public.digikala.com/digikala-products/3799257.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_80",
+                "price":"26,700",
+                "dkp":"827063"
+            },
+            {
+                "title":"دمنوش گیاهی چای سبز و لیمو نافه مدل 2 کیسه هرمی 15 عددی",
+                "img":"https://dkstatics-public.digikala.com/digikala-products/3795537.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_80",
+                "price":"13,800",
+                "dkp":"826413"
+            }
+    ]
+
+}

@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import { View, Text, StyleSheet, ScrollView, FlatList, Image, AsyncStorage} from "react-native";
 import {pubsub} from "../../services/pubsub";
 import {Buttonic} from "../../components/Buttonic";
+import {DGKLogo} from "../../components/DGKLogo";
 
 import {InputNumber} from "../../components/InputNumber";
 
@@ -17,16 +18,14 @@ export class Basket_page extends Component{
     }// @constructor()
 
     sepereteDigit(_number){
-        var input = _number.toString().replace(/[\D\s\._\-]+/g, "");
-        input = input ? parseInt( input, 10 ) : 0;
-        return ( input === 0 ) ? "" : input.toString();
+        return _number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
     }// @function: sepereteDigit()
 
     static navigationOptions = ({ navigation }) => {
         return {
-          headerTitle: "خرید خود را نهای کنید",
-          headerRight: ""
+            headerTitle: ( <DGKLogo /> ),
+            headerRight: ""
         };
     } // @Static: navigationOptions
 
@@ -43,7 +42,7 @@ export class Basket_page extends Component{
             //console.log("data basket", data)
             this.setState({
                 basketList:data,
-                totalPrice: price
+                totalPrice: this.sepereteDigit(price)
             });
             //console.log("state",this.state)
         } catch (error) {
@@ -57,36 +56,26 @@ export class Basket_page extends Component{
 
   
    async removeProduct(_dkp){
-
         try {
-            
-            
             let newBasket = this.state.basketList.filter(function( obj ) {
                     return obj.dkp !== _dkp;
             });
-    
-
             let price = 0;
             for(let product of newBasket){
-
                 for(let i = 1 ; i <= product.amount ; i++ ){
                     price = price + parseInt( product.price.replace(/[\D\s\._\-]+/g, "") )
                 }
             }
-
             this.setState({
                 basketList:newBasket,
-                totalPrice: price
+                totalPrice: this.sepereteDigit(price)
             });
-
             if(newBasket.length !== 0 || newBasket !== null ){
                 await AsyncStorage.setItem('BasketHolder',JSON.stringify(newBasket));
             }else{
                 await AsyncStorage.removeItem('BasketHolder');
             }
-          
             pubsub.emit("basket",{});
-
         } catch (error) {
               console.log("error", error)  
         }
@@ -101,57 +90,46 @@ export class Basket_page extends Component{
 
     changeOrderAmount(_el){
         this.addProduct(_el.amount, _el.dkp)
-    }
+    } //@Function: changeOrderAmount()
 
 
     async addProduct(_amount, _dkp){
         try {
            let products = JSON.parse( await AsyncStorage.getItem('BasketHolder') );
-
            products.forEach((product,index) => {
                 if(product.dkp == _dkp){
                     products[index]["amount"] = _amount
                 }
            });
-
            this.setState({
                 basketList:products
             });
-
            this.updateTotlaPrice();
-
            await AsyncStorage.setItem('BasketHolder',JSON.stringify(products));
-
-    
         } catch (error) {
             console.log("error", error)  
         }
-    }
+    } //@Function: addProduct()
 
     
     updateTotlaPrice(){
-
         let price = 0;
         for(let product of this.state.basketList){
-
             for(let i = 1 ; i <= product.amount ; i++ ){
                 price = price + parseInt( product.price.replace(/[\D\s\._\-]+/g, "") )
             }
-            
         }
-
         this.setState({
-            totalPrice: price
+            totalPrice: this.sepereteDigit(price)
         });
-
-    }
+    } //@Function: updateTotlaPrice()
   
     render(){
         return(
             <View>
                 <ScrollView>
                     <View style={styles.PriceHolder}>
-                        <Text style={styles.Tprice}> {this.sepereteDigit(this.state.totalPrice)} تومان</Text>
+                        <Text style={styles.Tprice}> { this.sepereteDigit(this.state.totalPrice)} تومان</Text>
                         <Text style={styles.Tprice}> جمع کل خرید </Text>
                     </View>
                     <View>
@@ -163,23 +141,21 @@ export class Basket_page extends Component{
                                             <Image  source={{uri: item.img}} style={{width: 120, height: 120}} /> 
                                             <Text  style={styles.productTitle}>{item.title}</Text>   
                                     </View>
-            <View style={styles.footer}>
-                                    <Text style={styles.productPrice}>{item.price} تومان</Text>
-                                    <InputNumber 
-                                        onChanged = {(text) => this.changeOrderAmount.bind(this)({amount: text, dkp: item.dkp}) }
-                                        style={styles.InputNumber}
-                                        value={item.amount || 1}
-                                    />
-                                     <Buttonic 
-                                        Title="حذف"
-                                        onPress={this.btnRemoveProduct.bind(Object.assign({dkp:item.dkp, This:this,update:this.setState}))}
-                                        style={styles.btnBuy}
-                                        btnStyle = {styles.btnBuy}
-                                        btnTitleStyle = {styles.btnText}
-                                    />
-                                   
-            </View>
-           
+                                    <View style={styles.footer}>
+                                        <Text style={styles.productPrice}>{item.price} تومان</Text>
+                                        <InputNumber 
+                                            onChanged = {(text) => this.changeOrderAmount.bind(this)({amount: text, dkp: item.dkp}) }
+                                            style={styles.InputNumber}
+                                            value={item.amount || 1}
+                                        />
+                                        <Buttonic 
+                                            Title="حذف"
+                                            onPress={this.btnRemoveProduct.bind(Object.assign({dkp:item.dkp, This:this,update:this.setState}))}
+                                            style={styles.btnBuy}
+                                            btnStyle = {styles.btnBuy}
+                                            btnTitleStyle = {styles.btnText}
+                                        />
+                                    </View>
                                 </View>
                             )} 
                         />
@@ -251,7 +227,6 @@ const styles = StyleSheet.create({
     productPrice:{
         fontSize:16,
         color:"#5f8336",
-        fontWeight:"bold",
         marginBottom:4,
         marginTop:10,
         paddingTop:6,

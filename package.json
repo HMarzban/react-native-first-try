@@ -11,15 +11,16 @@
     "android-windows": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res && react-native run-android"
   },
   "rnpm": {
-      "assets": [
-        "./app/assets/font/",
-        "./app/assets/img/"
-      ]
+    "assets": [
+      "./app/assets/font/",
+      "./app/assets/img/"
+    ]
   },
   "dependencies": {
     "@babel/runtime": "^7.1.2",
     "react": "16.5.0",
     "react-native": "0.57.2",
+    "react-native-snap-carousel": "^3.7.5",
     "react-navigation": "^2.18.0"
   },
   "devDependencies": {

@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import {View, Text, StyleSheet, Button,ScrollView, Image, AsyncStorage} from "react-native";
 
 import {pubsub} from "../../services/pubsub";
+import {DGKLogo} from "../../components/DGKLogo";
 
 import {BasketButton} from "../../components/basket";
 import {Buttonic} from "../../components/Buttonic";
@@ -18,10 +19,10 @@ export class Product_content extends Component{
 
     static navigationOptions = ({ navigation }) => {
         return {
-          headerTitle: "digikal",
-          headerRight: (
+            headerTitle: ( <DGKLogo /> ),
+            headerRight: (
             <BasketButton nav={navigation}/>
-          ),
+            ),
         };
     } //@Static: navigationOptions
     
@@ -54,7 +55,9 @@ export class Product_content extends Component{
                 data.push(this.state.product);
                 await AsyncStorage.setItem('BasketHolder', JSON.stringify(data));
             }
+            
             pubsub.emit('basket',true);
+            this.props.navigation.navigate('Basket');
             //console.log("your basket updatae",value)
         } catch (error) {
             // Error saving data
@@ -75,7 +78,7 @@ export class Product_content extends Component{
                 <ScrollView style={styles.body}>
                     <View style={[styles.section, styles.productCard]}>
                             <View style={styles.holder}>
-                                <Image  source={{uri: product.img}} style={{flex:0.42,width:"100%",height:"auto"}} /> 
+                                <Image  source={{uri: product.img}} style={{flex:0.42,width:"100%",resizeMode:"contain",height:"auto"}} /> 
                                 <Text   style={styles.productTitle}>{product.title}</Text>   
                             </View>
                         <Text style={styles.productPrice}>{product.price} تومان</Text>
@@ -88,7 +91,7 @@ export class Product_content extends Component{
                 </ScrollView>
                 <View style={styles.footer}>
                     <Buttonic 
-                        Title="خرید محصول"
+                        Title="افزودن به سبد خرید"
                         onPress={this.buyProduct.bind(this)}
                         style={styles.btnBuy}
                         btnStyle = {styles.btnBuy}
@@ -114,7 +117,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent:"center",
         alignItems:"center",
-        backgroundColor:"#75a43f",
+        backgroundColor:"#00bfd6",
+        borderRadius:10,
         height:50,
     },
     productPrice:{
@@ -130,7 +134,7 @@ const styles = StyleSheet.create({
     holder:{
         flexDirection: 'row',
         justifyContent: 'space-evenly',
-        minHeight:130
+        minHeight:134
     },
     productTitle:{
         fontSize:14,
@@ -184,7 +188,9 @@ const styles = StyleSheet.create({
     },
     footer:{
       position: 'absolute', left: 0, right: 0, bottom: 0,
-      backgroundColor:"transparent"
+      backgroundColor:"transparent",
+      padding:10,
+      backgroundColor:"#fff"
      
     },
     container: {
