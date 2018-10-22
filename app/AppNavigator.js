@@ -1,17 +1,17 @@
 import { createStackNavigator } from 'react-navigation';
-import { Index_page } from "./pages/index/index.page";
-import {Product_content} from "./pages/produc_content/product.content.page";
-import {Product_list} from "./pages/product_list/produc.list.page";
-import {Basket_page} from "./pages/basket/basket.page";
+import { IndexPage } from './pages/index/index.page';
+import { ProductContent } from './pages/produc_content/product.content.page';
+import { ProductList } from './pages/product_list/produc.list.page';
+import { BasketPage } from './pages/basket/basket.page';
 
 const AppNavigator = createStackNavigator({
-  Home: { screen: Index_page },
-  Product: { screen: Product_content},
-  ProductList: { screen: Product_list},
-  Basket : {screen: Basket_page}
-  
-},{
-    initialRouteName: 'Home',
+  Home: { screen: IndexPage },
+  Product: { screen: ProductContent },
+  ProductList: { screen: ProductList },
+  Basket: { screen: BasketPage },
+
+}, {
+  initialRouteName: 'Home',
 });
 
 export default AppNavigator;

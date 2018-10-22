@@ -1,23 +1,18 @@
-import React, {Component} from "react";
-import {View, Text, TouchableOpacity} from "react-native";
-
-
-
+import React, { Component } from 'react';
+import { Text, TouchableOpacity } from 'react-native';
 
 export class Buttonic extends Component {
-    constructor(){
-        super();
-    }
+  constructor() {
+    super();
+  }
 
+  render() {
+    return (
+      <TouchableOpacity style={this.props.btnStyle} onPress={this.props.onPress}>
+        <Text style={[this.props.btnTitleStyle]}>{this.props.Title}</Text>
+      </TouchableOpacity>
+    );
+  }
+} // @Class: Buttonic()
 
-    render(){
-
-        return(
-            <TouchableOpacity style={this.props.btnStyle} onPress={this.props.onPress}>
-                <Text style={[this.props.btnTitleStyle]}>{this.props.Title}</Text>
-            </TouchableOpacity>
-        );
-    }
-} //@Class: Buttonic()
-
-export default Buttonic
+export default Buttonic;
