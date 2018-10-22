@@ -6,7 +6,8 @@
 # install dependencies
 npm install
 
-# Android Run in Windows, first let build and install the app in your emulator or device after when it finishes close and end command by CTRL +C
+# Android Run in Windows, first let build and install the app in your emulator
+# or device after when it finishes close and end command by CTRL +C 
 npm run android-windows
 
 # Run Developer run mode:
