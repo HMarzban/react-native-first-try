@@ -1,3 +1,7 @@
+## Learning project
+
+This is a React Native 0.57-era learning project with a recorded UI demonstration. The original setup is retained for context. A Jest script exists, but this snapshot does not contain an automated JavaScript assertion suite.
+
 # react-native-first-try
 
 ### Development and Run:
